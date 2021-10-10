@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    color: #222;
+    overflow: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
+p{
+    font-weight: 10px;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+.chevron{
+    background-color: transparent;
+    position: fixed;
+    cursor: pointer;
+    font-size: 40px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
+    z-index: 101;
+}
+.chevron:hover{
+    color: #c0392b;
+}
+
+/* nav bar */
+.nav{
+    position: fixed;
+    background-color: #222;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+}
+.nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: 0.3s ease-in-out;
+}
+.nav ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+.nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: 0.3s ease-in-out;
+}
+.nav.active{
+    background-color: #fff;
+    box-shadow:0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.nav.active a{
+    color: #000;
+}
+.nav.active .container{
+    padding: 10px 0;
+}
+.nav a.current, .nav a:hover{
+    color: #c0392b;
+    font-weight: bold;
+    transition: 0.1s ease-in;
+}
+
+/* hero image */
+.hero{
+    background-image: url("https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80");
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: -2;
+}
+.hero::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -100;
+}
+.hero h1{
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+.hero p{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.content h2, .content h3{
+    text-align: center;
+    font-size: 150%;
+    margin: 20px 0;
+}
+.content p {
+    color: #555;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+}
+
+/* skills-section */
+#skills-section{
+    padding: 100px;
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.3s ease-in-out;
+}
+.skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.skills-container .skill{
+    width: 120px;
+    margin: 80px;
+    height: 120px;
+}
+.skills-container .skill img{
+    width: 120px;
+    height: 120px;
+}
+.skills-container .skill p{
+    font-size: 25px;
+    text-align: center;
+}
+.skills-container .skill:hover{
+    color: #c0392b;
+}
+
+
+/* slider section */
+
+.slider-container{
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.left-slide{
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.8s ease-in-out;
+}
+.left-slide > div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.left-slide h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    cursor: pointer;
+}
+.right-slide{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    transition: transform 0.8s ease-in-out;
+}
+.right-slide > div{
+    background-color: #111;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    height: 100%;
+    width: 100%;
+}
+button{
+    background-color: #fff;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+}
+button:focus{
+    outline: none;
+}
+button:hover{
+    color: #c0392b;
+}
+.slider-container .action-buttons button{
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
+}
+.slider-container .action-buttons .down-button{
+    transform: translateX(-100%);
+    border-radius: 5px 0 0 5px;
+}
+.slider-container .action-buttons .up-button{
+    transform: translateY(-100%);
+    border-radius: 0 5px 5px 0;
+}
